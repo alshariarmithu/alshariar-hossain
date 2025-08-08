@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import {
@@ -99,7 +99,6 @@ const ProjectsShowcase = () => {
   return (
     <section className="py-16 bg-gray-50 min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Projects
@@ -110,25 +109,6 @@ const ProjectsShowcase = () => {
             problem-solving capabilities
           </p>
         </div>
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category.key}
-              onClick={() => setActiveFilter(category.key)}
-              className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                activeFilter === category.key
-                  ? "bg-gray-900 text-white"
-                  : "bg-white text-gray-700 border border-gray-300 hover:border-gray-400"
-              }`}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Projects List */}
         <div className="space-y-8">
           {filteredProjects.map((project, index) => (
             <div
@@ -136,7 +116,6 @@ const ProjectsShowcase = () => {
               className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300"
             >
               <div className="flex flex-col lg:flex-row">
-                {/* Project Image - Left Side */}
                 <div className="lg:w-2/5 relative">
                   {/* Featured Badge */}
                   {project.featured && (
@@ -233,12 +212,15 @@ const ProjectsShowcase = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
         <div className="text-center mt-16">
-          <button className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
+          <a
+            href="https://github.com/alshariarmithu"
+            target="blank"
+            className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200 cursor-pointer"
+          >
             <Code className="w-5 h-5 mr-2" />
             View All Projects on GitHub
-          </button>
+          </a>
         </div>
       </div>
     </section>
